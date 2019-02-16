@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ZeroButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <declare-styleable name="FontTextView">
+        <attr name="font_face" format="string" />
+    </declare-styleable>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+</resources>

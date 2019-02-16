@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/five"
+        android:layout_margin="@dimen/five"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <kimani.com.sisu.widgets.FontTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/number"
+                android:textSize="16sp"
+                android:textColor="@color/primary_text"
+                app:font_face="@string/bold_font"
+                android:layout_height="wrap_content"
+                />
+
+            <kimani.com.sisu.widgets.FontTextView
+                android:layout_width="wrap_content"
+                android:id="@+id/question"
+                app:font_face="@string/regular_font"
+                android:layout_marginLeft="@dimen/ten"
+                android:layout_toRightOf="@+id/number"
+                android:layout_toLeftOf="@+id/check_image"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/check_image"
+                android:layout_height="30dp" />
+
+        </RelativeLayout>
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:id="@+id/answers_group"
+            android:layout_height="wrap_content">
+
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:id="@+id/first_choice"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:id="@+id/second_choice"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:id="@+id/third_choice"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@color/divider"
+        android:layout_height="1dp" />
+</LinearLayout>

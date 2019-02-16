@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sisu</string>
+    <string name="bold_font">Raleway-Bold.ttf</string>
+    <string name="regular_font">Raleway-Regular.ttf</string>
+    <string name="medium_font">Raleway-Medium.ttf</string>
+    <string name="conditions">"All the information entered here is bound by our \nterms and conditions"</string>
+</resources>

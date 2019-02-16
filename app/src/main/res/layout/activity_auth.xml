@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".AuthActivity">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:src="@drawable/logo"
+        android:layout_height="100dp" />
+
+    <kimani.com.sisu.widgets.FontTextView
+        android:layout_width="wrap_content"
+        android:text="SISU"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="50sp"
+        app:font_face="@string/bold_font"
+        android:layout_height="wrap_content" />
+
+    <kimani.com.sisu.widgets.FontTextView
+        android:layout_width="wrap_content"
+        android:textColor="@color/primary_text"
+        android:text="Flight risk assessment system"
+        android:layout_marginTop="@dimen/sixteen"
+        android:layout_marginBottom="@dimen/ten"
+        app:font_face="@string/bold_font"
+        android:layout_height="wrap_content" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:id="@+id/pr"
+        android:visibility="gone"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:layout_width="300dp"
+        android:layout_marginTop="@dimen/sixteen"
+        android:hint="Email address"
+        android:id="@+id/email_address"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:layout_width="300dp"
+        android:layout_marginTop="@dimen/sixteen"
+        android:hint="Password"
+        android:id="@+id/password"
+        android:layout_marginBottom="@dimen/ten"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:id="@+id/login_btn"
+        android:layout_marginTop="@dimen/sixteen"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="Sign in to account"
+        android:layout_marginBottom="@dimen/ten"
+        android:layout_height="wrap_content" />
+
+    <kimani.com.sisu.widgets.FontTextView
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/ten"
+        android:textColor="@color/secondary_text"
+        android:text="@string/conditions"
+        app:font_face="@string/medium_font"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
