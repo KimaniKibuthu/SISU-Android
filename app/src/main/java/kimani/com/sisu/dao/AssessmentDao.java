@@ -17,11 +17,18 @@ public interface AssessmentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAssessment(FlightAssessment flightAssessment);
 
+    @Query("DELETE FROM flight_assessment_table")
+    void deleteAllAssessment();
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAssessmentQuestion(AssessmentQuestion assessmentQuestion);
 
+    @Query("DELETE FROM assessment_questions_table")
+    void deleteAllAssesmentQuestions();
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertQuestion(Question question);
+
 
     @Query("SELECT * from flight_assessment_table WHERE flight_id =:flight")
     LiveData<ComposedFlightAssessment> getFlightQuestions(int flight);

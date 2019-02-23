@@ -13,4 +13,8 @@
         android:icon="@drawable/ic_action_refresh"
         app:showAsAction="ifRoom"
         />
+    <item android:title="Results"
+        android:id="@+id/ic_action_results"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_action_results"/>
 </menu>

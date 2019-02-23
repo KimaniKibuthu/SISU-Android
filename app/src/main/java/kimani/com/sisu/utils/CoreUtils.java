@@ -12,8 +12,8 @@ public class CoreUtils {
     private static Retrofit retrofit = null;
     private static Retrofit auth_retrofit = null;
 
-    public static String base_url="http://192.168.100.5/sisu/public/api/";
-//    public static String base_url="http://cd0bc167.ngrok.io/api/";
+//    public static String base_url="http://192.168.100.5/sisu/public/api/";
+    public static String base_url="http://sisu.neverest.co.ke/api/";
 
     public static Retrofit getRetrofitClient() {
         if (retrofit == null) {

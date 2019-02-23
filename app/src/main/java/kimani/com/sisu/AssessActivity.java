@@ -102,7 +102,7 @@ public class AssessActivity extends AppCompatActivity {
                 questionsPagerAdapter.clear();
 
                 for(Category c: categories){
-                    Fragment f = new QuestionsFragment();
+                    QuestionsFragment f = new QuestionsFragment();
                     Bundle b = new Bundle();
                     b.putInt("category",c.getId());b.putInt("flight",flight);
                     f.setArguments(b);
@@ -147,12 +147,14 @@ public class AssessActivity extends AppCompatActivity {
             case R.id.ic_action_upload:
                 uploadInformation();
                 return true;
-
             case R.id.ic_action_refresh:
                 assessView.loadFlightReportOnline(flight);
                 return true;
-
-
+            case R.id.ic_action_results:
+                Intent go_to_results = new Intent(getApplicationContext(),ResultsActivity.class);
+                go_to_results.putExtra("flight",flight);
+                startActivity(go_to_results);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

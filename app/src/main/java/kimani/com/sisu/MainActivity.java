@@ -1,5 +1,6 @@
 package kimani.com.sisu;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -32,12 +33,26 @@ public class MainActivity extends AppCompatActivity {
 
     private FlightsAdapter flightsAdapter;
     private FlightsView flightsView;
+    public static MutableLiveData<Boolean> logout = new MutableLiveData<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        logout.postValue(false);
+        logout.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                if(aBoolean!=null && aBoolean){
+                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("ACCESS_TOKEN", null).apply();
+                    Intent t = new Intent(getApplicationContext(),AuthActivity.class);
+                    t.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(t);
+                }
+            }
+        });
 
         flightsView = ViewModelProviders.of(this).get(FlightsView.class);
 
@@ -95,10 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 flightsView.loadFlightsOnline();
                 return true;
             case R.id.ic_action_logout:
-                PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("ACCESS_TOKEN", null).apply();
-                Intent t = new Intent(getApplicationContext(),AuthActivity.class);
-                t.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(t);
+                flightsView.logout();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
