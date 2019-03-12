@@ -59,7 +59,7 @@ public class QuestionsFragment extends Fragment implements QuestionsAdapter.Ques
             public void onChanged(@Nullable ComposedFlightAssessment composedFlightAssessment) {
                 if(composedFlightAssessment!=null){
                     questionsAdapter.updateData(filteredQuestions(getArguments().getInt("category",0),composedFlightAssessment));
-                    Log.e("Data","Data"+filteredQuestions(getArguments().getInt("category",0),composedFlightAssessment).size());
+//                    Log.e("Data","Data"+filteredQuestions(getArguments().getInt("category",0),composedFlightAssessment).size());
                 }
 
             }

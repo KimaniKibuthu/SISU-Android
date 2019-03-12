@@ -1,5 +1,7 @@
 package kimani.com.sisu.utils;
 
+import android.util.Log;
+
 import java.util.concurrent.Executors;
 
 import okhttp3.OkHttpClient;
@@ -35,6 +37,7 @@ public class CoreUtils {
     }
 
     public static Retrofit getAuthRetrofitClient(String token) {
+        Log.e("Auth_TOKEN",token);
         if (auth_retrofit == null) {
 
             Retrofit.Builder builder = new Retrofit.Builder()
@@ -53,6 +56,11 @@ public class CoreUtils {
             auth_retrofit=builder.build();
         }
         return auth_retrofit;
+    }
+
+    public static void destroyRetrofit() {
+        retrofit = null;
+        auth_retrofit=null;
     }
 
     public static enum SYNC {

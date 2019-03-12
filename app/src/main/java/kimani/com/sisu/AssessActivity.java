@@ -42,6 +42,7 @@ public class AssessActivity extends AppCompatActivity {
     private int flight = 0;
     private AssessView assessView;
     private ComposedFlightAssessment assessment;
+    private Snackbar snackbar;
 
 
     @BindView(R.id.viewpager) ViewPager viewPager;
@@ -71,6 +72,8 @@ public class AssessActivity extends AppCompatActivity {
         viewPager.setAdapter(questionsPagerAdapter);
 
         final ProgressDialog dialog = new ProgressDialog(this);
+        snackbar =Snackbar.make(viewPager, "" , Snackbar.LENGTH_LONG);
+
         dialog.setMessage("Loading,please wait...");
 
 
@@ -84,9 +87,12 @@ public class AssessActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                     if(networkResponse.message!=null){
-                        Snackbar.make(viewPager, networkResponse.message , Snackbar.LENGTH_LONG).show();
-
-
+                        if(snackbar.isShown()){
+                            snackbar.setText(networkResponse.message);
+                        }else{
+                            snackbar.setText(networkResponse.message);
+                            snackbar.show();
+                        }
                     }
                 }
             }

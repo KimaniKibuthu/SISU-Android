@@ -4,6 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 
 import kimani.com.sisu.models.Authorization;
@@ -58,7 +59,8 @@ public class AuthorizationRepository extends BaseRepository {
     }
 
     public void saveToken(String token){
-        PreferenceManager.getDefaultSharedPreferences(application).edit().putString("ACCESS_TOKEN", token).apply();
+        Log.e("SAVE_TOKEN",token);
+        PreferenceManager.getDefaultSharedPreferences(application).edit().putString("ACCESS_TOKEN", token).commit();
     }
 
 
